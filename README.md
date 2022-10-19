@@ -25,6 +25,20 @@ So let's go see what cool new things I learn here!
 
 _I was thrilled to see this, as it was originally why I had returned to Module 5! I love React's components, if for nothing else besides being able to view areas of JS code in different files, but hadn't successfully done it in JavaScript._
 
+Here are the steps:
+
+1. Add `type="module"` to your script tag in the HTML.
+<div align="center"><img src="./screenshots/code-module-html.png" alt="script tag with type of module and src"></div>
+
+2. Create a new `.js` file with a descriptive file name.
+3. Use the `export` keyword before file **variables** or **functions**.
+<div align="center"><img src="./screenshots/code-export-module.png" alt="script tag with type of module and src"></div>
+
+4. Import the file to `index.js` using the variable or function names and tell it the root file.
+<div align="center"><img src="./screenshots/code-import-module.png" alt="script tag with type of module and src"></div>
+
+**Note**: Modular code needs to be run on a server. But as long as you are using the **Live Server** VS Code extention you will be fine!
+
 ### uuid
 
 A `uuid` is a **universally unique identifier**. It's common for **data sets** to have such a **key** to _ahem_ identify the **data blocks**. Each of the tweets will have one.
