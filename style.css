@@ -20,7 +20,7 @@
     box-sizing: border-box;
 }
 
-html, body, h1, h2, h3, p, span, div, button, a, i {
+html, body, h1, h2, h3, p, span, div, button, a, i, textarea {
   margin: 0;
   padding: 0;
   border: 0;
@@ -97,6 +97,7 @@ textarea{
   width: 100%;
   font-size: 20px;
   line-height: 30px;
+  resize: none;
 }
 
 button{
