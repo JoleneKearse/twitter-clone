@@ -39,6 +39,12 @@ Here are the steps:
 
 **Note**: Modular code needs to be run on a server. But as long as you are using the **Live Server** VS Code extention you will be fine!
 
+### `textarea` formatting
+
+<div align="center"><img src="./screenshots/code-textarea.png" alt="script tag with type of module and src"></div>
+
+I would usually place the **closing tag** on another line, but that **breaks it**! So other than being a form of **input** not in an `<input>` tag, this is another weird thing to be aware of.
+
 ### uuid
 
 A `uuid` is a **universally unique identifier**. It's common for **data sets** to have such a **key** to _ahem_ identify the **data blocks**. Each of the tweets will have one.
