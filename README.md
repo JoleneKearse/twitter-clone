@@ -45,6 +45,13 @@ Here are the steps:
 
 I would usually place the **closing tag** on another line, but that **breaks it**! So other than being a form of **input** not in an `<input>` tag, this is another weird thing to be aware of.
 
+I also picked up this neat trick to **disable the resizing handlebars**:
+```
+textarea {
+  resize: none;
+}
+```
+
 ### uuid
 
 A `uuid` is a **universally unique identifier**. It's common for **data sets** to have such a **key** to _ahem_ identify the **data blocks**. Each of the tweets will have one.
