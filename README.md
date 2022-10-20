@@ -46,11 +46,20 @@ Here are the steps:
 I would usually place the **closing tag** on another line, but that **breaks it**! So other than being a form of **input** not in an `<input>` tag, this is another weird thing to be aware of.
 
 I also picked up this neat trick to **disable the resizing handlebars**:
+
 ```
 textarea {
   resize: none;
 }
 ```
+
+### A More Complete Understanding of CDN's
+
+- Remote service
+- Provides assets: functions, styles, icons
+- Gives a snippet of code to bring it into our projects
+
+A great place to find all you need is **[cdnjs](https://cdnjs.com/)**.
 
 ### uuid
 
@@ -59,3 +68,17 @@ A `uuid` is a **universally unique identifier**. It's common for **data sets** t
 <hr>
 
 ## Tricky Parts to Navigate
+
+### Font Awesome Icons Messing With Your Design
+
+I've had this problem before: _I found the right icons, but their color didn't look good in my design._ What do you do in a situation like this?
+
+<div align="center"><img src="./screenshots/screenshot-icons-wrong.png" alt="script tag with type of module and src"></div>
+
+Since the _offending_ icons both have a class of `fa-solid`, you can simply target that in the CSS and change it!
+
+```
+.fa-solid {
+  color: #999999;
+}
+```
