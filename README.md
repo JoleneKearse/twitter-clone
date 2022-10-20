@@ -4,18 +4,18 @@
 
 This is the 3rd project in the **[Scrimba](https://scrimba.com/) Frontend Developer Career Path**'s **Module 5** on **Essential JavaScript**.
 
-I completed a previous iteration of Module 5 and heard that it was completely re-done. _Scrimba's always updating their awesome courses._ I had (re)learned some concepts and newly learned about `FormData` in the _fun-evil_ **[Cookie Consent project](https://github.com/JoleneKearse/cookie-consent)** and found the topics covered here to be exciting. I was really excited to discover how the **reply**, **like** & **retweet** buttons would be implemented. I worked on the \*\*[Oldagram Instagram clone](https://github.com/JoleneKearse/oldagram), but moved on to other things (_a freelance project, and work with a team of fellow development learners_) before I got my like button working.
+I completed a previous iteration of Module 5 and heard that it was completely re-done. _Scrimba's always updating their awesome courses._ I had (re)learned some concepts and newly learned about `FormData` in the _fun-evil_ **[Cookie Consent project](https://github.com/JoleneKearse/cookie-consent)** and found the topics covered here to be exciting. I was really excited to discover how the **reply**, **like** & **retweet** buttons would be implemented. I worked on the **[Oldagram Instagram clone](https://github.com/JoleneKearse/oldagram)**, but moved on to other things (_a freelance project, and work with a team of fellow development learners_) before I got my like button working.
 
-## Things this Project will Teach
+## Things this Project Taught
 
 - the `.forEach()` method
-- `CDN`s or **Content Delivery Networks** to **add icons** and **generate UUIDs**
+- `CDN`s, or **Content Delivery Networks**, to **add icons** and **generate UUIDs**
 - `textarea`
 - **data attributes** to store info in an HTML element
 - conditionally render styles
 - logical not operator, `!`
 
-So let's go see what cool new things I learn here!
+So let's go see what cool new things I learned!
 
 <hr>
 
@@ -31,7 +31,7 @@ Here are the steps:
 <div align="center"><img src="./screenshots/code-module-html.png" alt="script tag with type of module and src"></div>
 
 2. Create a new `.js` file with a descriptive file name.
-3. Use the `export` keyword before file **variables** or **functions**.
+3. Use the `export` keyword before file **variable** or **function** declarations.
 <div align="center"><img src="./screenshots/code-export-module.png" alt="script tag with type of module and src"></div>
 
 4. Import the file to `index.js` using the variable or function names and tell it the root file.
