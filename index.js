@@ -1,3 +1,3 @@
-import { data } from "./data.js";
+import { tweetsData } from "./data.js";
 
-console.log(data);
+console.log(tweetsData);
