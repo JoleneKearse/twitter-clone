@@ -73,7 +73,15 @@ A page-wide event listener is possible with **data attributes**. They will let y
 
 <div align="center"><img src="./screenshots/slide-data-attribute-syntax.png" alt="script tag with type of module and src"></div>
 
-We can use one in each icon to say that it is associated with which tweet.
+We can add one in each icon to say that it is associated with which tweet via it's `uuid` - _more on that below._
+
+<div align="center"><img src="./screenshots/code-data-attributes-html.png" alt="script tag with type of module and src"></div>
+
+Now we can click on each icon and get that tweet's uuid.
+
+<div align="center"><img src="./screenshots/code-dataset-consoles.png" alt="script tag with type of module and src"></div>
+
+Next we create a function to handle each icon.
 
 ### uuid
 
