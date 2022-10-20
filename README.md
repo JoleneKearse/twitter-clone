@@ -61,6 +61,20 @@ textarea {
 
 A great place to find all you need is **[cdnjs](https://cdnjs.com/)**.
 
+### Avoiding an EventListener on each and every icon
+
+To add an EventListener to each tweet's **comment**, **like**, and **retweet** would quickly become non-performant. _Imagine thousands of tweets each with 3 event listeners!_
+
+**The Answer?**
+
+A page-wide event listener is possible with **data attributes**. They will let you know which tweet they are associated with and which icon was clicked.
+
+**Data attributes** store extra info in HTML elements. You can customize what type of info you want to keep in it, then set the value equal to a string.
+
+<div align="center"><img src="./screenshots/slide-data-attribute-syntax.png" alt="script tag with type of module and src"></div>
+
+We can use one in each icon to say that it is associated with which tweet.
+
 ### uuid
 
 A `uuid` is a **universally unique identifier**. It's common for **data sets** to have such a **key** to _ahem_ identify the **data blocks**. Each of the tweets will have one.
