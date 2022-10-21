@@ -22,10 +22,16 @@ function handleLikeClick(tweetId) {
   const targetTweetObj = tweetsData.filter(
     (tweet) => tweet.uuid === tweetId
   )[0];
-  // increment likes in the obj
-  targetTweetObj.likes++;
-  // this will change the likes count in the obj displayed in the console, but not in data.js
-  console.log(targetTweetObj);
+  // increment likes in the obj, only if isLiked is false, or decrement it
+  if (targetTweetObj.isLiked) {
+    targetTweetObj.likes--;
+    targetTweetObj.isLiked = false;
+  } else {
+    targetTweetObj.likes++;
+    targetTweetObj.isLiked = true;
+  }
+  // display new count on page
+  render();
 }
 
 // build html for feed
