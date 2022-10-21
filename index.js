@@ -10,6 +10,8 @@ tweetBtn.addEventListener("click", function () {
 document.addEventListener("click", function (e) {
   if (e.target.dataset.like) {
     handleLikeClick(e.target.dataset.like);
+  } else if (e.target.dataset.retweet) {
+    handleRetweetClick(e.target.dataset.retweet);
   }
 });
 
@@ -33,10 +35,33 @@ function handleLikeClick(tweetId) {
   render();
 }
 
+// retweet
+function handleRetweetClick(tweetId) {
+  const targetTweetObj = tweetsData.filter(
+    (tweet) => tweet.uuid === tweetId
+  )[0];
+  if (targetTweetObj.isRetweeted) {
+    targetTweetObj.retweets--;
+  } else {
+    targetTweetObj.retweets++;
+  }
+  targetTweetObj.isRetweeted = !targetTweetObj.isRetweeted;
+  render();
+}
+
 // build html for feed
 function getFeedHtml() {
   let feedHtml = ``;
+
   tweetsData.forEach(function (tweet) {
+    // set up icon classes to conditionally render
+    let likedClass = "";
+    let retweetedClass = "";
+    if (tweet.isLiked) {
+      likedClass = "liked";
+    } else if (tweet.isRetweeted) {
+      retweetedClass = "retweeted";
+    }
     feedHtml += `
       <div class="tweet">
         <div class="tweet-inner">
@@ -51,12 +76,12 @@ function getFeedHtml() {
                     </span>
                     <span class="tweet-detail">
                         ${tweet.likes}
-                        <i class="fa-solid fa-heart" 
+                        <i class="fa-solid fa-heart ${likedClass}" 
                         data-like="${tweet.uuid}"></i>
                     </span>
                     <span class="tweet-detail">
                         ${tweet.retweets}
-                        <i class="fa-solid fa-retweet" 
+                        <i class="fa-solid fa-retweet ${retweetedClass}" 
                         data-retweet="${tweet.uuid}"></i>
                     </span>
                 </div>   
