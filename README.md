@@ -71,7 +71,7 @@ A page-wide event listener is possible with **data attributes**. They will let y
 
 **Data attributes** store extra info in HTML elements. You can customize what type of info you want to keep in it, then set the value equal to a string.
 
-<div align="center"><img src="./screenshots/slide-data-attribute-syntax.png" alt="script tag with type of module and src"></div>
+<div align="center"><img src="./screenshots/slide-data-attribute-syntax.png" alt="script tag with type of module and src" width="200" height="100"></div>
 
 We can add one in each icon to say that it is associated with which tweet via it's `uuid` - _more on that below._
 
@@ -81,7 +81,15 @@ Now we can click on each icon and get that tweet's uuid.
 
 <div align="center"><img src="./screenshots/code-dataset-consoles.png" alt="script tag with type of module and src"></div>
 
-Next we create a function to handle each icon.
+Next we create a function to handle each icon. This will be the code for `handleLikeClick`.
+
+1. Using an **`if` statement** within the document event listener ensures that only icon clicks cause a reaction.
+
+<div align="center"><img src="./screenshots/code-event-listener-like.png" alt="script tag with type of module and src"></div>
+
+2. Set up the function. _As is good practice, I tested it with a `console.log`._
+
+<div align="center"><img src="./screenshots/code-like-func1.png" alt="script tag with type of module and src"></div>
 
 ### uuid
 
