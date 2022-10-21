@@ -1,4 +1,5 @@
 import { tweetsData } from "./data.js";
+import { v4 as uuidv4 } from "https://jspm.dev/uuid";
 
 const tweetInput = document.getElementById("tweet-input");
 
@@ -13,9 +14,6 @@ document.addEventListener("click", function (e) {
     handleTweetBtnClick();
   }
 });
-
-// console.log(e.target.dataset.reply);
-// console.log(e.target.dataset.retweet);
 
 // get ahold of correct tweet and increment it's likes count
 function handleLikeClick(tweetId) {
@@ -55,7 +53,18 @@ function handleReplyClick(replyId) {
 
 // new tweets
 function handleTweetBtnClick() {
-  console.log(tweetInput.value);
+  tweetsData.unshift({
+    handle: `@Scrimba`,
+    profilePic: `./images/scrimbalogo.png`,
+    likes: 0,
+    retweets: 0,
+    tweetText: `${tweetInput.value}`,
+    replies: [],
+    isLiked: false,
+    isRetweeted: false,
+    uuid: `${uuidv4()}`,
+  });
+  render();
 }
 
 // build html for feed
