@@ -25,11 +25,10 @@ function handleLikeClick(tweetId) {
   // increment likes in the obj, only if isLiked is false, or decrement it
   if (targetTweetObj.isLiked) {
     targetTweetObj.likes--;
-    targetTweetObj.isLiked = false;
   } else {
     targetTweetObj.likes++;
-    targetTweetObj.isLiked = true;
   }
+  targetTweetObj.isLiked = !targetTweetObj.isLiked;
   // display new count on page
   render();
 }

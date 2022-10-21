@@ -107,7 +107,9 @@ Next we create a function to handle each icon. This will be the code for `handle
 
 6. Re-call `render()` and the new count will update on the page.
 
-7. But we only want the ability to increment it and decrement it, not like lots of times as the function currently allows.
+7. But we only want the ability to increment it and decrement it, not like lots of times as the function currently allows. So we add an **if/else** statement before `render` and also flip the **boolean** `isLiked`.
+
+<div align="center"><img src="./screenshots/code-like-func3.png" alt="script tag with type of module and src"></div>
 
 ### uuid
 
