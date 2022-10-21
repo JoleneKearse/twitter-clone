@@ -13,12 +13,19 @@ document.addEventListener("click", function (e) {
   }
 });
 
-  // console.log(e.target.dataset.reply);
-  // console.log(e.target.dataset.retweet);
+// console.log(e.target.dataset.reply);
+// console.log(e.target.dataset.retweet);
 
-
+// get ahold of correct tweet and increment it's likes count
 function handleLikeClick(tweetId) {
-  console.log(tweetId);
+  // filter tweet uuid that matches clicked icon, will return array with obj, get only obj with [0]
+  const targetTweetObj = tweetsData.filter(
+    (tweet) => tweet.uuid === tweetId
+  )[0];
+  // increment likes in the obj
+  targetTweetObj.likes++;
+  // this will change the likes count in the obj displayed in the console, but not in data.js
+  console.log(targetTweetObj);
 }
 
 // build html for feed
