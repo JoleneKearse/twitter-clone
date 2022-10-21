@@ -1,8 +1,6 @@
 import { tweetsData } from "./data.js";
 import { v4 as uuidv4 } from "https://jspm.dev/uuid";
 
-const tweetInput = document.getElementById("tweet-input");
-
 document.addEventListener("click", function (e) {
   if (e.target.dataset.like) {
     handleLikeClick(e.target.dataset.like);
@@ -15,6 +13,7 @@ document.addEventListener("click", function (e) {
   }
 });
 
+// FUNCTIONS
 // get ahold of correct tweet and increment it's likes count
 function handleLikeClick(tweetId) {
   // filter tweet uuid that matches clicked icon, will return array with obj, get only obj with [0]
@@ -43,6 +42,7 @@ function handleRetweetClick(tweetId) {
     targetTweetObj.retweets++;
   }
   targetTweetObj.isRetweeted = !targetTweetObj.isRetweeted;
+  tweetsData.unshift(targetTweetObj);
   render();
 }
 
@@ -53,6 +53,7 @@ function handleReplyClick(replyId) {
 
 // new tweets
 function handleTweetBtnClick() {
+  const tweetInput = document.getElementById("tweet-input");
   if (tweetInput.value) {
     tweetsData.unshift({
       handle: `@Scrimba`,
