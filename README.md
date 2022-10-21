@@ -91,6 +91,14 @@ Next we create a function to handle each icon. This will be the code for `handle
 
 <div align="center"><img src="./screenshots/code-like-func1.png" alt="script tag with type of module and src"></div>
 
+3. Filter for `tweet.uuid` matching `tweetId`. As the `.filter()` method returns an **array**, return the **object** itself with **bracket notation**, like on _line 24_.
+
+<div align="center"><img src="./screenshots/code-like-func2.png" alt="script tag with type of module and src"></div>
+
+4. Now that the tweet object is saved as the variable `targetTweetObj` use **dot notation** to access the `likes` property and \*\*increment` it.
+
+5. As the comment on _line 27_ says this will only change the count to your console, but not effect the original data file.
+
 ### uuid
 
 A `uuid` is a **universally unique identifier**. It's common for **data sets** to have such a **key** to _ahem_ identify the **data blocks**. Each of the tweets will have one.
