@@ -115,6 +115,14 @@ Next we create a function to handle each icon. This will be the code for `handle
 
 A `uuid` is a **universally unique identifier**. It's common for **data sets** to have such a **key** to _ahem_ identify the **data blocks**. Each of the tweets will have one.
 
+**UUID**s are a complicated string of 36 alphanumeric characters used to identify a piece of data and are generally **globally unique**. Another name for them is **GUID**, but both are unique not just in your app, but globally/universally.
+
+<div align="center"><img src="./screenshots/code-uuid.png" alt="script tag with type of module and src"></div>
+
+You can generate your own **Version 4 UUID** via [CDN builds](https://github.com/uuidjs/uuid#cdn-builds). Simply copy the **import statement** and the **function** below it.
+
+<div align="center"><img src="./screenshots/web-uuidv4.png" alt="script tag with type of module and src"></div>
+
 <hr>
 
 ## Tricky Parts to Navigate
