@@ -141,7 +141,8 @@ i {
   border-top: 1px solid var(--clr-neutral-200);
 }
 
-.tweet-inner {
+.tweet-inner,
+.tweet-reply .tweet-inner {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -159,7 +160,6 @@ i {
   gap: .25rem;
 }
 
-/* TODO: center the tweet-inner */
 .tweet-reply {
   width: 80%;
   margin: 10px 0 10px 40px;
