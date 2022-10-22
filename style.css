@@ -103,7 +103,7 @@ color: var(--clr-retweet);
 /* ---------- LAYOUT ----------*/
 
 main, header{
-  width: 35%;
+  width: 100%;
   margin: 0 auto;
   padding: 1em;
   background-color: var(--clr-neutral-200);
@@ -172,7 +172,7 @@ i,
 .tweet-reply .tweet-inner {
   display: flex;
   align-items: flex-start;
-  gap: 2em;
+  gap: 1em;
 }
 
 .tweet-content {
@@ -213,23 +213,17 @@ i,
   display: none;
 }
 
-/* ---------- THEME ----------
-:root */
-
-
-
 /* ---------- MEDIA QUERIES ----------*/
-@media (max-width:450px) {
-  main, header {
-    width: 98%;
-  }
-  .tweet-inner {
-    gap: 1em;
-  }
-}
-
-@media (max-width: 850px) {
+@media (min-width: 700px) {
   main, header {
     width: 70%;
+  }
+  .tweet-inner {
+    gap: 2em;
+  }
+}
+@media (min-width: 950px) {
+  main, header {
+    width: 35%;
   }
 }
