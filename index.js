@@ -1,6 +1,10 @@
 import { tweetsData } from "./data.js";
 import { v4 as uuidv4 } from "https://jspm.dev/uuid";
 
+// set initial theme
+const docTheme = document.getElementById("toggleTheme");
+docTheme.setAttribute("data-theme", "light");
+
 document.addEventListener("click", function (e) {
   if (e.target.dataset.like) {
     handleLikeClick(e.target.dataset.like);
@@ -10,10 +14,21 @@ document.addEventListener("click", function (e) {
     handleReplyClick(e.target.dataset.reply);
   } else if (e.target.id === "tweet-btn") {
     handleTweetBtnClick();
+  } else if (e.target.id === "theme") {
+    changeTheme();
   }
 });
 
 // FUNCTIONS
+// change light/dark theme
+function changeTheme() {
+  if (docTheme.getAttribute("data-theme") === "light") {
+    docTheme.setAttribute("data-theme", "dark");
+  } else {
+    docTheme.setAttribute("data-theme", "light");
+  }
+}
+
 // get ahold of correct tweet and increment it's likes count
 function handleLikeClick(tweetId) {
   // filter tweet uuid that matches clicked icon, will return array with obj, get only obj with [0]

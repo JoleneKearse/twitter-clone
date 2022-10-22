@@ -1,14 +1,28 @@
 /* ---------- CUSTOM PROPERTIES ----------*/
 :root {
-  --clr-neutral-100: #f9ffff;
-  --clr-neutral-200: lightgrey;
-  --clr-neutral-300: #999999;
+  --clr-text: #0F8CDF;
+  --clr-like: #ff0000;
+  --clr-retweet: #32cd32;
+}
+
+[data-theme="light"] {
+  --clr-neutral-100: #ffffff;
+  --clr-neutral-200: #f9ffff;
+  --clr-neutral-300: #d3d3d3;
+  --clr-neutral-400: #999999;
   --clr-neutral-500: #555555;
   --clr-neutral-800: #232323;
   --clr-neutral-900: #000000;
-  --clr-text: #0F8CDF;
-  --clr-like: red;
-  --clr-retweet: limegreen;
+}
+
+[data-theme="dark"] {
+  --clr-neutral-100: #000000;
+  --clr-neutral-200: #232323;
+  --clr-neutral-300: #555555;
+  --clr-neutral-400: #999999;
+  --clr-neutral-500: #d3d3d3;
+  --clr-neutral-800: #f9ffff;
+  --clr-neutral-900: #ffffff;
 }
 
 /* ---------- RESET ----------*/
@@ -44,7 +58,7 @@ body {
   font-weight: 400;
   line-height: 1.2;
   color: var(--clr-neutral-800);
-  background-color: #FFFFFF;
+  background-color: var(--clr-neutral-100);
 }
 
 /* ---------- TYPOGRAPHY ----------*/
@@ -61,18 +75,21 @@ button {
   letter-spacing: 1.5px;
 }
 
-header .theme {
+#theme {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
   font-size: 1.5em;
   color: var(--clr-text);
 }
 
-.theme:hover,
-.theme:focus {
+#theme:hover,
+#theme:focus {
   opacity: .7;
 }
 
 .fa-solid {
-  color: var(--clr-neutral-300);
+  color: var(--clr-neutral-400);
 }
 
 .liked{
@@ -88,11 +105,13 @@ color: var(--clr-retweet);
 main, header{
   width: 35%;
   margin: 0 auto;
-  background-color: var(--clr-neutral-100);
+  padding: 1em;
+  background-color: var(--clr-neutral-200);
 }
 
 header{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 1em;
@@ -107,18 +126,17 @@ header{
 /* ---------- COMPONENTS ----------*/
 
 .profile-pic{
-  border: 1px solid var(--clr-neutral-200);
+  border: 1px solid var(--clr-neutral-300);
   border-radius: 50%;
   width: 3em;
 }
 
 textarea{
-  width: 100%;
   height: 4em;
-  min-width: 100%;
   margin: 0 0 20px 0;
   padding: .5em;
   border: none;
+  background-color: var(--clr-neutral-200);
   font-size: clamp(1.25rem, 1.2210rem + 0.1290vw, 1.35rem);
   line-height: 30px;
   resize: none;
@@ -132,11 +150,12 @@ button{
   background-color: var(--clr-text);
   font-size: clamp(1.25rem, 1.2210rem + 0.1290vw, 1.35rem);
   font-weight: 600;
-  color: var(--clr-neutral-100);
+  color: var(--clr-neutral-200);
 }
 
 button,
-i {
+i,
+.fa-moon-over-sun {
   cursor: pointer;
 }
 
@@ -146,13 +165,12 @@ i {
   width: 100%;
   margin: 1em 0;
   padding: 20px 0 0 0;
-  border-top: 1px solid var(--clr-neutral-200);
+  border-top: 1px solid var(--clr-neutral-300);
 }
 
 .tweet-inner,
 .tweet-reply .tweet-inner {
   display: flex;
-  /* justify-content: center; */
   align-items: flex-start;
   gap: 2em;
 }
@@ -176,7 +194,7 @@ i {
   width: 90%;
   margin: 10px 0 10px 40px;
   padding: 20px 0 0 0px;
-  border-top: 1px solid var(--clr-neutral-200);
+  border-top: 1px solid var(--clr-neutral-300);
 }
 
 .handle{
