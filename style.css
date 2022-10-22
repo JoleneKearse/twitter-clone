@@ -221,11 +221,7 @@ i,
 /* ---------- MEDIA QUERIES ----------*/
 @media (max-width:450px) {
   main, header {
-    width: 90%;
-  }
-  /* TODO: Change when I get element widths right */
-  textarea {
-    /* height: 4em; */
+    width: 95%;
   }
   .tweet-inner {
     gap: 1em;
