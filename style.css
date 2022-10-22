@@ -221,7 +221,7 @@ i,
 /* ---------- MEDIA QUERIES ----------*/
 @media (max-width:450px) {
   main, header {
-    width: 95%;
+    width: 98%;
   }
   .tweet-inner {
     gap: 1em;
