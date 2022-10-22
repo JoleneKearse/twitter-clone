@@ -104,7 +104,7 @@ function getFeedHtml() {
       <div class="tweet">
         <div class="tweet-inner">
             <img src="${tweet.profilePic}" class="profile-pic">
-            <div>
+            <div class="tweet-content">
                 <p class="handle">${tweet.handle}</p>
                 <p class="tweet-text">${tweet.tweetText}</p>
                 <div class="tweet-details">
@@ -127,7 +127,7 @@ function getFeedHtml() {
         </div>
         <div class="hidden" id="replies-${tweet.uuid}">
         ${repliesHtml}
-    </div>
+        </div>
     </div>`;
   });
   return feedHtml;
