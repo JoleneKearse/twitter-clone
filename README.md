@@ -140,3 +140,7 @@ Since the _offending_ icons both have a class of `fa-solid`, you can simply targ
   color: #999999;
 }
 ```
+
+### Keeping the Textarea Responsive
+
+For the most part the new Tweet input was fine, but I noticed a scrollbar would appear at some sizes. I found `min-height: 100%` solved the issue!

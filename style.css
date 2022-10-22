@@ -21,11 +21,14 @@
     box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+
 html, body, h1, h2, h3, p, span, div, button, a, i, textarea {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 16px;
   font: inherit;
   vertical-align: baseline;
 }
@@ -41,22 +44,27 @@ body {
   font-weight: 400;
   line-height: 1.2;
   color: var(--clr-neutral-800);
-  background-color: var(--clr-neutral-100);
+  background-color: #FFFFFF;
 }
 
 /* ---------- TYPOGRAPHY ----------*/
 
 h1{
   margin-bottom: 10px;
-  font-size: 20px;
+  font-size: clamp(1.5rem, 1.4274rem + 0.3226vw, 1.75rem);
   font-weight: 700;
   color: var(--clr-text);
 }
 
-i{
-  font-size: 15px;
-  cursor: pointer;
+h1,
+button {
+  letter-spacing: 1.5px;
 }
+
+/* TODO: Maybe bring this back with clamp? */
+/* i{
+  font-size: 15px;
+} */
 
 .fa-solid {
   color: var(--clr-neutral-300);
@@ -73,18 +81,19 @@ color: var(--clr-retweet);
 /* ---------- LAYOUT ----------*/
 
 main, header{
-  width: 290px;
+  width: 30%;
   margin: 0 auto;
+  background-color: var(--clr-neutral-100);
 }
 
 header{
-  padding-bottom: 25px;
+  padding-bottom: 1em;
 }
 
 .tweet-input-area {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: 1em;
 }
 
 /* ---------- COMPONENTS ----------*/
@@ -92,75 +101,81 @@ header{
 .profile-pic{
   border: 1px solid var(--clr-neutral-200);
   border-radius: 50%;
-  width: 48px;
+  width: 3em;
 }
 
 textarea{
-  border: none;
-  padding: 10px;
-  margin: 0 0 20px 0;
-  height: 60px;
   width: 100%;
-  font-size: 20px;
+  height: 4em;
+  min-width: 100%;
+  margin: 0 0 20px 0;
+  padding: .5em;
+  border: none;
+  font-size: clamp(1.25rem, 1.2210rem + 0.1290vw, 1.35rem);
   line-height: 30px;
   resize: none;
 }
 
 button{
-  background-color: var(--clr-text);
+  width: 100%;
+  padding: .65em 1em;
   border: none;
-  color: var(--clr-neutral-100);
-  padding: 10px 19px;
-  border-radius: 20px;
-  width: 100%; 
-  cursor: pointer;
-  font-size: 20px;
+  border-radius: 1em;
+  background-color: var(--clr-text);
+  font-size: clamp(1.25rem, 1.2210rem + 0.1290vw, 1.35rem);
   font-weight: 600;
+  color: var(--clr-neutral-100);
+}
+
+button,
+i {
+  cursor: pointer;
 }
 
 /* tweets */
 
-.tweet{
-  border-top: 1px solid var(--clr-neutral-200);
-  padding: 20px 0 0 0;
+.tweet {
   width: 100%;
-  margin: 15px 0;
-}
-
-.tweet-inner{
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-}
-
-.tweet-details{
-  display: flex;
-  font-size: 13px;
-  justify-content: space-between;
-  width: 160px;
-}
-
-.tweet-detail{
-  display: flex;
-  gap: 4px;
-}
-
-.tweet-reply{
+  margin: 1em 0;
+  padding: 20px 0 0 0;
   border-top: 1px solid var(--clr-neutral-200);
-  padding: 20px 0 0 0px;
-  margin: 10px 0 10px 40px;
+}
+
+.tweet-inner {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2em;
+}
+
+.tweet-details {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.tweet-detail {
+  display: flex;
+  gap: .25rem;
+}
+
+/* TODO: center the tweet-inner */
+.tweet-reply {
   width: 80%;
+  margin: 10px 0 10px 40px;
+  padding: 20px 0 0 0px;
+  border-top: 1px solid var(--clr-neutral-200);
 }
 
 .handle{
-  font-size: 12px;
+  margin-top: 0;
+  margin-bottom: .25em;
   font-weight: 500;
   color: var(--clr-neutral-500);
-  margin-top: 0;
 }
 
 .tweet-text{
-  width: 207px;
+  margin-bottom: .25em;
   line-height: 20px;
 }
 
@@ -168,3 +183,15 @@ button{
   display: none;
 }
 /* ---------- MEDIA QUERIES ----------*/
+@media (max-width:450px) {
+  main, header {
+    width: 90%;
+  }
+  /* TODO: Change when I get element widths right */
+  textarea {
+    /* height: 4em; */
+  }
+  .tweet-inner {
+    gap: 1em;
+  }
+}
