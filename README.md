@@ -1,6 +1,8 @@
 # Twimba - A Scimba-themed Twitter Clone
 
-<div align="center"><img src="./screenshots/initial.png" alt="Twitter clone"></div>
+[Live Site](https://twitter-clone-phi-pearl.vercel.app/)
+
+<div align="center"><img src="./screenshots/Twimba-screenrecording.gif" alt="Twitter clone"></div>
 
 This is the 3rd project in the **[Scrimba](https://scrimba.com/) Frontend Developer Career Path**'s **Module 5** on **Essential JavaScript**.
 
