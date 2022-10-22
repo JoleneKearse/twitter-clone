@@ -89,7 +89,7 @@ button {
 }
 
 ::placeholder {
-  color: var(--clr-neutral-500);
+  color: var(--clr-neutral-400);
 }
 
 .fa-solid {
