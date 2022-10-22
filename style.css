@@ -146,6 +146,10 @@ textarea{
   resize: none;
 }
 
+textarea:focus {
+  outline: none;
+}
+
 button{
   width: 100%;
   padding: .65em 1em;
