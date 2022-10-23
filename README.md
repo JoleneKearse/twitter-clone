@@ -146,3 +146,37 @@ Since the _offending_ icons both have a class of `fa-solid`, you can simply targ
 ### Keeping the Textarea Responsive
 
 For the most part the new Tweet input was fine, but I noticed a scrollbar would appear at some sizes. I found `min-height: 100%` solved the issue!
+
+## My Extras
+
+### Added Retweet to Feed
+
+I completed this with a one-liner:
+
+<div align="center"><img src="./screenshots/code-adding-retweet.png" alt="tweetsData.unshift(targetTweetObj)"></div>
+
+### Light/Dark Mode Toggle
+
+The **icon** was my first big hiccup! I already used **Font Awesome**, so I thought it would be simple. Nuh-uh, because I had to go and be all picky about it.
+
+I was going to use a moon and sun icon, but wanted to simplify it to just one icon. I found an awesome one, but it wasn't showing up on the page. I was worried that it was _lost_ somewhere on the page. Finally I was able to force it to take up space, but it still wasn't showing. After reading through the docs, I hit upon the problem - I didn't choose a free one! 🤣
+
+I set up **CSS custom properties by inverting my neutral colours**.
+
+<div align="center"><img src="./screenshots/code-mode-css.png" alt="colors set at the root and in data-theme light and dark"></div>
+
+I added `id`s to the HTML to grab via JavaScript. One on the icon and the other on body to make the change.
+
+<div align="center"><img src="./screenshots/code-mode-html.png" alt="colors set at the root and in data-theme light and dark"></div>
+
+I set up the initial theme in `index.js`.
+
+<div align="center"><img src="./screenshots/code-mode-initial-theme.png" alt="grab of id on body, added the theme using set attribute"></div>
+
+I added the icon `id` to the **event listener**.
+
+<div align="center"><img src="./screenshots/code-mode-event-listener.png" alt="added an else if statement looking for theme id to call function"></div>
+
+I used a **if/else statement** to change the theme back and forth.
+
+<div align="center"><img src="./screenshots/code-mode-func.png" alt="function using if else to change the attribute"></div>
