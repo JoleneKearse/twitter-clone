@@ -1,5 +1,21 @@
 # Twimba - A Scimba-themed Twitter Clone
 
+
+## Table of Contents
+- [Things This Project Taught](/twitter-clone#things-this-project-taught)
+- [Brand-New Knowledge](https://github.com/JoleneKearse/twitter-clone#brand-new-knowledge)
+  - [Breaking JS into Modules](https://github.com/JoleneKearse/twitter-clone#breaking-js-into-modules)
+  - [`textarea` Formatting](https://github.com/JoleneKearse/twitter-clone#textarea-formatting)
+  - [A More Complete Understanding of CDN's](https://github.com/JoleneKearse/twitter-clone#a-more-complete-understanding-of-cdns)
+  - [Avoiding an EventListener on Each and Every Icon](https://github.com/JoleneKearse/twitter-clone#avoiding-an-eventlistener-on-each-and-every-icon)
+  - [`uuid](https://github.com/JoleneKearse/twitter-clone#uuid)
+- [Tricky Parts to Navigate](https://github.com/JoleneKearse/twitter-clone#tricky-parts-to-navigate)
+  - [Font Awesome Icons Messing With Your Design](https://github.com/JoleneKearse/twitter-clone#font-awesome-icons-messing-with-your-design)
+  - [Keeping the Textarea Responsive](https://github.com/JoleneKearse/twitter-clone#keeping-the-textarea-responsive)
+- [My Extras](https://github.com/JoleneKearse/twitter-clone#my-extras)
+  - [Added Retweet to Feed](https://github.com/JoleneKearse/twitter-clone#added-retweet-to-feed)
+  - [Light/Dark Mode Toggle](https://github.com/JoleneKearse/twitter-clone#lightdark-mode-toggle)
+
 [Live Site](https://twitter-clone-phi-pearl.vercel.app/)
 
 <div align="center"><img src="./screenshots/Twimba-screenrecording.gif" alt="Twitter clone"></div>
@@ -21,7 +37,7 @@ So let's go see what cool new things I learned!
 
 <hr>
 
-## Brand-new Knowledge
+## Brand-New Knowledge
 
 ### Breaking JS into Modules
 
@@ -41,7 +57,7 @@ Here are the steps:
 
 **Note**: Modular code needs to be run on a server. But as long as you are using the **Live Server** VS Code extention you will be fine!
 
-### `textarea` formatting
+### `textarea` Formatting
 
 <div align="center"><img src="./screenshots/code-textarea.png" alt="textarea with placeholder and id attributes and closing tag on the same line"></div>
 
