@@ -1,8 +1,8 @@
 # Twimba - A Scimba-themed Twitter Clone
 
-
 ## Table of Contents
-- [Things This Project Taught](/twitter-clone#things-this-project-taught)
+
+- [Things This Project Taught](https://github.com/JoleneKearse/twitter-clone#things-this-project-taught)
 - [Brand-New Knowledge](https://github.com/JoleneKearse/twitter-clone#brand-new-knowledge)
   - [Breaking JS into Modules](https://github.com/JoleneKearse/twitter-clone#breaking-js-into-modules)
   - [`textarea` Formatting](https://github.com/JoleneKearse/twitter-clone#textarea-formatting)
