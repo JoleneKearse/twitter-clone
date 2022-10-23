@@ -34,16 +34,16 @@ Here are the steps:
 
 2. Create a new `.js` file with a descriptive file name.
 3. Use the `export` keyword before file **variable** or **function** declarations.
-<div align="center"><img src="./screenshots/code-export-module.png" alt="script tag with type of module and src"></div>
+<div align="center"><img src="./screenshots/code-export-module.png" alt="export keyword in front of data"></div>
 
 4. Import the file to `index.js` using the variable or function names and tell it the root file.
-<div align="center"><img src="./screenshots/code-import-module.png" alt="script tag with type of module and src"></div>
+<div align="center"><img src="./screenshots/code-import-module.png" alt="import statement to pull data.js into index.js"></div>
 
 **Note**: Modular code needs to be run on a server. But as long as you are using the **Live Server** VS Code extention you will be fine!
 
 ### `textarea` formatting
 
-<div align="center"><img src="./screenshots/code-textarea.png" alt="script tag with type of module and src"></div>
+<div align="center"><img src="./screenshots/code-textarea.png" alt="textarea with placeholder and id attributes and closing tag on the same line"></div>
 
 I would usually place the **closing tag** on another line, but that **breaks it**! So other than being a form of **input** not in an `<input>` tag, this is another weird thing to be aware of.
 
@@ -73,36 +73,36 @@ A page-wide event listener is possible with **data attributes**. They will let y
 
 **Data attributes** store extra info in HTML elements. You can customize what type of info you want to keep in it, then set the value equal to a string.
 
-<div align="center"><img src="./screenshots/slide-data-attribute-syntax.png" alt="script tag with type of module and src" width="250" height="100"></div>
+<div align="center"><img src="./screenshots/slide-data-attribute-syntax.png" alt="data attribute syntax" width="250" height="100"></div>
 
 We can add one in each icon to say that it is associated with which tweet via it's `uuid` - _more on that below._
 
-<div align="center"><img src="./screenshots/code-data-attributes-html.png" alt="script tag with type of module and src"></div>
+<div align="center"><img src="./screenshots/code-data-attributes-html.png" alt="data attributes added to i in js"></div>
 
 Now we can click on each icon and get that tweet's uuid.
 
-<div align="center"><img src="./screenshots/code-dataset-consoles.png" alt="script tag with type of module and src"></div>
+<div align="center"><img src="./screenshots/code-dataset-consoles.png" alt="using e.target.dataset.attritute name in event listener"></div>
 
 Next we create a function to handle each icon. This will be the code for `handleLikeClick`.
 
 1. Using an **`if` statement** within the document event listener ensures that only icon clicks cause a reaction.
 
-<div align="center"><img src="./screenshots/code-event-listener-like.png" alt="script tag with type of module and src"></div>
+<div align="center"><img src="./screenshots/code-event-listener-like.png" alt="using if statement in event listener to only target data-like"></div>
 
 2. Set up the function. _As is good practice, I tested it with a `console.log`._
 
-<div align="center"><img src="./screenshots/code-like-func1.png" alt="script tag with type of module and src"></div>
+<div align="center"><img src="./screenshots/code-like-func1.png" alt="console log for testing"></div>
 
 3. Filter for `tweet.uuid` matching `tweetId`. As the `.filter()` method returns an **array**, return the **object** itself with **bracket notation**, like on _line 24_.
 
-<div align="center"><img src="./screenshots/code-like-func2.png" alt="script tag with type of module and src"></div>
+<div align="center"><img src="./screenshots/code-like-func2.png" alt="using filter method to match tweet uuid to tweet id passed into the function"></div>
 
 4. Now that the tweet object is saved as the variable `targetTweetObj` use **dot notation** to access the `likes` property and \*\*increment` it.
 
 5. As the comment on _line 27_ says this will only change the count to your console, but not effect the original data file. **So copying objects and arrays have some strange behaviour.**
 
 > This creates a **shallow** copy.
-> <img src="./screenshots/slide-shallow-copy.png" alt="script tag with type of module and src" width="250" height="100">
+> <img src="./screenshots/slide-shallow-copy.png" alt="chart showing how declared obj and shallow copy both point to the same object in memory" width="250" height="100">
 > Creating a variable makes space in the program's memory, but a shallow copy doesn't take up more space. It is only a **reference to that original variable stored in memory**.
 > Now if you change anything in `userObj` it will also change in `usersArray` as they are **the same thing**. Except for **primitive data types**, which do change!
 > You could also make a **deep copy**.
@@ -111,7 +111,7 @@ Next we create a function to handle each icon. This will be the code for `handle
 
 7. But we only want the ability to increment it and decrement it, not like lots of times as the function currently allows. So we add an **if/else** statement before `render` and also flip the **boolean** `isLiked`.
 
-<div align="center"><img src="./screenshots/code-like-func3.png" alt="script tag with type of module and src"></div>
+<div align="center"><img src="./screenshots/code-like-func3.png" alt="if else statement to check if boolean isLiked is true or not, then flipping it's value"></div>
 
 ### uuid
 
@@ -119,11 +119,11 @@ A `uuid` is a **universally unique identifier**. It's common for **data sets** t
 
 **UUID**s are a complicated string of 36 alphanumeric characters used to identify a piece of data and are generally **globally unique**. Another name for them is **GUID**, but both are unique not just in your app, but globally/universally.
 
-<div align="center"><img src="./screenshots/code-uuid.png" alt="script tag with type of module and src"></div>
+<div align="center"><img src="./screenshots/code-uuid.png" alt="uuid with long hypen separated alphanumeric characters"></div>
 
 You can generate your own **Version 4 UUID** via [CDN builds](https://github.com/uuidjs/uuid#cdn-builds). Simply copy the **import statement** and the **function** below it.
 
-<div align="center"><img src="./screenshots/web-uuidv4.png" alt="script tag with type of module and src"></div>
+<div align="center"><img src="./screenshots/web-uuidv4.png" alt="two icons appearing way darker than other first"></div>
 
 <hr>
 
