@@ -79,7 +79,7 @@ textarea {
 
 A great place to find all you need is **[cdnjs](https://cdnjs.com/)**.
 
-### Avoiding an EventListener on each and every icon
+### Avoiding an EventListener on Each and Every Icon
 
 To add an EventListener to each tweet's **comment**, **like**, and **retweet** would quickly become non-performant. _Imagine thousands of tweets each with 3 event listeners!_
 
@@ -129,7 +129,7 @@ Next we create a function to handle each icon. This will be the code for `handle
 
 <div align="center"><img src="./screenshots/code-like-func3.png" alt="if else statement to check if boolean isLiked is true or not, then flipping it's value"></div>
 
-### uuid
+### `uuid`
 
 A `uuid` is a **universally unique identifier**. It's common for **data sets** to have such a **key** to _ahem_ identify the **data blocks**. Each of the tweets will have one.
 
@@ -159,7 +159,7 @@ Since the _offending_ icons both have a class of `fa-solid`, you can simply targ
 }
 ```
 
-### Keeping the Textarea Responsive
+### Keeping the `textarea` Responsive
 
 For the most part the new Tweet input was fine, but I noticed a scrollbar would appear at some sizes. I found `min-height: 100%` solved the issue!
 
@@ -172,6 +172,8 @@ I completed this with a one-liner:
 <div align="center"><img src="./screenshots/code-adding-retweet.png" alt="tweetsData.unshift(targetTweetObj)"></div>
 
 ### Light/Dark Mode Toggle
+
+<div align="center"><img src="./screenshots/dark-light-mode.png" alt="dark mode and light mode"></div>
 
 The **icon** was my first big hiccup! I already used **Font Awesome**, so I thought it would be simple. Nuh-uh, because I had to go and be all picky about it.
 
@@ -196,3 +198,4 @@ I added the icon `id` to the **event listener**.
 I used a **if/else statement** to change the theme back and forth.
 
 <div align="center"><img src="./screenshots/code-mode-func.png" alt="function using if else to change the attribute"></div>
+
