@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from "https://jspm.dev/uuid";
 const docTheme = document.getElementById("toggleTheme");
 docTheme.setAttribute("data-theme", "light");
 
+// event listeners
 document.addEventListener("click", function (e) {
   if (e.target.dataset.like) {
     handleLikeClick(e.target.dataset.like);
@@ -91,7 +92,7 @@ function handleTweetBtnClick() {
 function getFeedHtml() {
   let feedHtml = ``;
 
-  tweetsData.forEach(function (tweet) {
+  tweetsData.forEach((tweet) => {
     // set up icon classes to conditionally render
     let likedClass = "";
     let retweetedClass = "";
@@ -103,7 +104,7 @@ function getFeedHtml() {
     // check if tweet has replies
     let repliesHtml = "";
     if (tweet.replies.length > 0) {
-      tweet.replies.forEach(function (reply) {
+      tweet.replies.forEach((reply) => {
         repliesHtml += `
         <div class="tweet-reply">
           <div class="tweet-inner">
