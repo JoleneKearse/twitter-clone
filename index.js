@@ -53,11 +53,12 @@ function handleRetweetClick(tweetId) {
   )[0];
   if (targetTweetObj.isRetweeted) {
     targetTweetObj.retweets--;
+    tweetsData.shift(targetTweetObj);
   } else {
     targetTweetObj.retweets++;
+    tweetsData.unshift(targetTweetObj);
   }
   targetTweetObj.isRetweeted = !targetTweetObj.isRetweeted;
-  tweetsData.unshift(targetTweetObj);
   render();
 }
 
