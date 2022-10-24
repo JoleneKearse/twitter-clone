@@ -167,9 +167,13 @@ For the most part the new Tweet input was fine, but I noticed a scrollbar would 
 
 ### Added Retweet to Feed
 
-I completed this with a one-liner:
+I originally completed this with a one-liner...
 
 <div align="center"><img src="./screenshots/code-adding-retweet.png" alt="tweetsData.unshift(targetTweetObj)"></div>
+
+... But it introduced a bug, where the retweet would remain in the feed! Thinking one step further, I arrived at this solution on _lines 56 & 59_.
+
+<div align="center"><img src="./screenshots/code-adding-retweet-fix.png" alt="using shift or unshift to remove or add tweet to array in if else statement"></div>
 
 ### Light/Dark Mode Toggle
 
@@ -198,4 +202,3 @@ I added the icon `id` to the **event listener**.
 I used a **if/else statement** to change the theme back and forth.
 
 <div align="center"><img src="./screenshots/code-mode-func.png" alt="function using if else to change the attribute"></div>
-
