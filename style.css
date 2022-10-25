@@ -187,7 +187,8 @@ i,
   width: 100%;
 }
 
-.tweet-details {
+.tweet-details,
+.reply-details {
   display: flex;
   justify-content: space-between;
   width: 100%;

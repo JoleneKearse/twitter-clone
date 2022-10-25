@@ -17,6 +17,8 @@ document.addEventListener("click", function (e) {
     handleTweetBtnClick();
   } else if (e.target.id === "theme") {
     changeTheme();
+  } else if (e.target.dataset.liked) {
+    handleLikedClick(e.target.dataset.tweet, e.target.dataset.liked);
   }
 });
 
@@ -44,6 +46,25 @@ function handleLikeClick(tweetId) {
   }
   targetTweetObj.isLiked = !targetTweetObj.isLiked;
   // display new count on page
+  render();
+}
+
+function handleLikedClick(originalTweet, replyId) {
+  console.log(`clicked`);
+  const targetTweetObj = tweetsData.filter(
+    (tweet) => tweet.uuid === originalTweet
+  )[0];
+  const targetReplyObj = targetTweetObj.replies.filter(
+    (reply) => reply.uuid === replyId
+  )[0];
+  console.log(`replyId: ${replyId}`);
+  console.log(targetReplyObj);
+  if (targetReplyObj.isLiked) {
+    targetReplyObj.likes--;
+  } else {
+    targetReplyObj.likes++;
+  }
+  targetReplyObj.isLiked = !targetReplyObj.isLiked;
   render();
 }
 
@@ -112,6 +133,20 @@ function getFeedHtml() {
               <div>
                 <p class="handle">${reply.handle}</p>
                 <p class="tweet-text">${reply.tweetText}</p>
+                <div class=reply-details>
+                  <span class="reply-detail">
+                    ${reply.replies.length}
+                    <i class="fa-regular fa-comment-dots" data-tweet="${tweet.uuid}" data-replied="${reply.uuid}"></i>
+                  </span>
+                  <span class="reply-detail">
+                    ${reply.likes}
+                    <i class="fa-solid fa-heart" ${likedClass} data-tweet="${tweet.uuid}" data-liked="${reply.uuid}"></i>
+                  </span>
+                  <span class="reply-detail">
+                    ${reply.retweets}
+                    <i class="fa-solid fa-retweet ${retweetedClass}" data-tweet="${tweet.uuid}" data-retweeted="${reply.uuid}"></i>
+                  </span>
+                </div>
               </div>
           </div>
       </div>`;
