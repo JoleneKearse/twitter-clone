@@ -112,22 +112,6 @@ function getFeedHtml() {
               <div>
                 <p class="handle">${reply.handle}</p>
                 <p class="tweet-text">${reply.tweetText}</p>
-                <div class="tweet-details">
-                    <span class="tweet-detail">
-                        ${reply.replies.length}
-                        <i class="fa-regular fa-comment-dots" data-reply="${reply.uuid}"></i>
-                    </span>
-                    <span class="tweet-detail">
-                        ${reply.likes}
-                        <i class="fa-solid fa-heart ${likedClass}" 
-                        data-like="${reply.uuid}"></i>
-                    </span>
-                    <span class="tweet-detail">
-                        ${reply.retweets}
-                        <i class="fa-solid fa-retweet ${retweetedClass}" 
-                        data-retweet="${reply.uuid}"></i>
-                    </span>
-                </div>
               </div>
           </div>
       </div>`;
@@ -137,7 +121,7 @@ function getFeedHtml() {
       <div class="tweet">
         <div class="tweet-inner">
             <img src="${tweet.profilePic}" class="profile-pic">
-            <div class="tweet-content">
+            <div>
                 <p class="handle">${tweet.handle}</p>
                 <p class="tweet-text">${tweet.tweetText}</p>
                 <div class="tweet-details">

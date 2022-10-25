@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "https://jspm.dev/uuid";
+
 export const tweetsData = [
   {
     handle: `@TrollBot66756542 💎`,
@@ -27,7 +29,7 @@ export const tweetsData = [
         replies: [],
         isLiked: false,
         isRetweeted: false,
-        uuid: "",
+        uuid: `${uuidv4()}`,
       },
       {
         handle: `@ChuckNorris ✅`,
@@ -38,7 +40,7 @@ export const tweetsData = [
         replies: [],
         isLiked: false,
         isRetweeted: false,
-        uuid: "",
+        uuid: `${uuidv4()}`,
       },
     ],
     isLiked: false,
@@ -61,7 +63,7 @@ export const tweetsData = [
         replies: [],
         isLiked: false,
         isRetweeted: false,
-        uuid: ``,
+        uuid: `${uuidv4()}`,
       },
       {
         handle: `@YummyCoder64`,
@@ -72,7 +74,7 @@ export const tweetsData = [
         replies: [],
         isLiked: false,
         isRetweeted: false,
-        uuid: "",
+        uuid: `${uuidv4()}`,
       },
     ],
     isLiked: false,
