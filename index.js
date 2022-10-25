@@ -19,6 +19,8 @@ document.addEventListener("click", function (e) {
     changeTheme();
   } else if (e.target.dataset.liked) {
     handleLikedClick(e.target.dataset.tweet, e.target.dataset.liked);
+  } else if (e.target.dataset.retweeted) {
+    handleRetweetedClick(e.target.dataset.tweet, e.target.dataset.retweeted);
   }
 });
 
@@ -50,15 +52,12 @@ function handleLikeClick(tweetId) {
 }
 
 function handleLikedClick(originalTweet, replyId) {
-  console.log(`clicked`);
   const targetTweetObj = tweetsData.filter(
     (tweet) => tweet.uuid === originalTweet
   )[0];
   const targetReplyObj = targetTweetObj.replies.filter(
     (reply) => reply.uuid === replyId
   )[0];
-  console.log(`replyId: ${replyId}`);
-  console.log(targetReplyObj);
   if (targetReplyObj.isLiked) {
     targetReplyObj.likes--;
   } else {
@@ -82,6 +81,22 @@ function handleRetweetClick(tweetId) {
   }
   targetTweetObj.isRetweeted = !targetTweetObj.isRetweeted;
   render();
+}
+
+function handleRetweetedClick(originalTweet, replyId) {
+  const targetTweetObj = tweetsData.filter(
+    (tweet) => tweet.uuid === originalTweet
+  )[0];
+  const targetReplyObj = targetTweetObj.replies.filter(
+    (reply) => reply.uuid === replyId
+  )[0];
+  if (targetReplyObj.isRetweeted) {
+    targetReplyObj.retweets--;
+    tweetsData.shift(targetReplyObj);
+  } else {
+    targetReplyObj.retweets++;
+    tweetsData.unshift(targetReplyObj);
+  }
 }
 
 // reply to display replies
@@ -122,6 +137,15 @@ function getFeedHtml() {
     } else if (tweet.isRetweeted) {
       retweetedClass = "retweeted";
     }
+    // tweetsData.forEach((reply) => {
+    //   let likedClass = "";
+    //   let retweetedClass = "";
+    //   if (reply.isLiked) {
+    //     likedClass = "liked";
+    //   } else if (reply.isRetweeted) {
+    //     retweetedClass = "retweeted";
+    //   }
+    // });
     // check if tweet has replies
     let repliesHtml = "";
     if (tweet.replies.length > 0) {
@@ -140,7 +164,7 @@ function getFeedHtml() {
                   </span>
                   <span class="reply-detail">
                     ${reply.likes}
-                    <i class="fa-solid fa-heart" ${likedClass} data-tweet="${tweet.uuid}" data-liked="${reply.uuid}"></i>
+                    <i class="fa-solid fa-heart ${likedClass}" data-tweet="${tweet.uuid}" data-liked="${reply.uuid}"></i>
                   </span>
                   <span class="reply-detail">
                     ${reply.retweets}
