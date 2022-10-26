@@ -84,6 +84,7 @@ function handleRetweetClick(tweetId) {
 }
 
 function handleRetweetedClick(originalTweet, replyId) {
+  console.log("clicked");
   const targetTweetObj = tweetsData.filter(
     (tweet) => tweet.uuid === originalTweet
   )[0];
@@ -154,7 +155,7 @@ function getFeedHtml() {
         <div class="tweet-reply">
           <div class="tweet-inner">
             <img src="${reply.profilePic}" class="profile-pic">
-              <div>
+              <div class="reply-content">
                 <p class="handle">${reply.handle}</p>
                 <p class="tweet-text">${reply.tweetText}</p>
                 <div class=reply-details>
@@ -180,7 +181,7 @@ function getFeedHtml() {
       <div class="tweet">
         <div class="tweet-inner">
             <img src="${tweet.profilePic}" class="profile-pic">
-            <div>
+            <div class="tweet-content">
                 <p class="handle">${tweet.handle}</p>
                 <p class="tweet-text">${tweet.tweetText}</p>
                 <div class="tweet-details">

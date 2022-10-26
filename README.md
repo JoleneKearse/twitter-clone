@@ -146,7 +146,7 @@ I've had this problem before: _I found the right icons, but their color didn't l
 
 Since the _offending_ icons both have a class of `fa-solid`, you can simply target that in the CSS and change it!
 
-```
+```css
 .fa-solid {
   color: #999999;
 }

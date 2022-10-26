@@ -183,6 +183,7 @@ i,
 .tweet-reply .tweet-inner {
   display: flex;
   align-items: flex-start;
+  flex: 1 1 100%;
   gap: 1em;
   width: 100%;
 }
@@ -200,11 +201,22 @@ i,
 }
 
 .tweet-reply {
-  width: 95%;
+  width: 90%;
   margin: 10px 0 10px 40px;
   padding: 20px 0 0 0px;
   border-top: 1px solid var(--clr-neutral-300);
-  scroll-snap-align: end !important;
+} 
+
+.tweet-reply .tweet-inner {
+  display: flex;
+  min-width: 100%;
+}
+
+.tweet-content,
+.reply-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 95%;
 }
 
 .handle{
@@ -234,6 +246,6 @@ i,
 }
 @media (min-width: 950px) {
   main, header {
-    width: 35%;
+    width: 40%;
   }
 }
