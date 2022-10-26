@@ -93,12 +93,12 @@ function handleRetweetedClick(originalTweet, replyId) {
   if (targetReplyObj.isRetweeted) {
     targetReplyObj.retweets--;
     tweetsData.shift(targetReplyObj);
-    render();
   } else {
     targetReplyObj.retweets++;
     tweetsData.unshift(targetReplyObj);
-    render();
   }
+  targetReplyObj.isRetweeted = !targetReplyObj.isRetweeted;
+  render();
 }
 
 // reply to display replies
