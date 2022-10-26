@@ -84,7 +84,6 @@ function handleRetweetClick(tweetId) {
 }
 
 function handleRetweetedClick(originalTweet, replyId) {
-  console.log("clicked");
   const targetTweetObj = tweetsData.filter(
     (tweet) => tweet.uuid === originalTweet
   )[0];
@@ -94,9 +93,11 @@ function handleRetweetedClick(originalTweet, replyId) {
   if (targetReplyObj.isRetweeted) {
     targetReplyObj.retweets--;
     tweetsData.shift(targetReplyObj);
+    render();
   } else {
     targetReplyObj.retweets++;
     tweetsData.unshift(targetReplyObj);
+    render();
   }
 }
 
