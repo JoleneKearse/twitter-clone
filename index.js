@@ -42,6 +42,7 @@ function handleLikeClick(tweetId) {
   const targetTweetObj = tweetsData.filter(
     (tweet) => tweet.uuid === tweetId
   )[0];
+  console.log(targetTweetObj);
   // increment likes in the obj, only if isLiked is false, or decrement it
   if (targetTweetObj.isLiked) {
     targetTweetObj.likes--;
@@ -107,33 +108,37 @@ function handleRetweetedClick(originalTweet, replyId) {
 
 // reply to display replies
 function handleReplyClick(replyId) {
+  // document.getElementById("tweet-reply-area").classList.toggle("hidden");
   document.getElementById(`replies-${replyId}`).classList.toggle("hidden");
 }
 
-function handleReplyBtnClick(originalTweet, replyId) {
+function handleReplyBtnClick(id) {
   console.log(`reply btn clicked`);
+  console.log(`${id}`);
   const replyInput = document.getElementById("reply-input");
-  const targetTweetObj = tweetsData.filter(
-    (tweet) => tweet.uuid === originalTweet
-  )[0];
+  const targetTweetObj = tweetsData.filter((tweet) => tweet.uuid === id)[0];
+  const repliesArr = Object.keys(targetTweetObj);
+  console.log(repliesArr);
+  // console.log(replyInput.value);
+  // const repliesArr = targetTweetObj[replies];
   // const targetReplyObj = targetTweetObj.replies.filter(
   //   (reply) => reply.uuid === replyId
   // )[0];
-  if (replyInput.value) {
-    targetTweetObj.replies.unshift({
-      handle: `@Scrimba`,
-      profilePic: `./images/scrimbalogo.png`,
-      likes: 0,
-      retweets: 0,
-      tweetText: `${replyInput.value}`,
-      replies: [],
-      isLiked: false,
-      isRetweeted: false,
-      uuid: `${uuidv4()}`,
-    });
-    render();
-    replyInput.value = "";
-  }
+  // if (replyInput.value) {
+  //   repliesArr.unshift({
+  //     handle: `@Scrimba`,
+  //     profilePic: `./images/scrimbalogo.png`,
+  //     likes: 0,
+  //     retweets: 0,
+  //     tweetText: `${replyInput.value}`,
+  //     replies: [],
+  //     isLiked: false,
+  //     isRetweeted: false,
+  //     uuid: `${uuidv4()}`,
+  //   });
+  //   render();
+  //   replyInput.value = "";
+  // }
 }
 
 // new tweets
@@ -183,13 +188,7 @@ function getFeedHtml() {
     let repliesHtml = "";
     if (tweet.replies.length > 0) {
       // first give the ability for user to reply to tweets
-      repliesHtml += `
-        <div class="reply-input-area>
-          <img src="images/scrimbalogo.png" class="profile-pic" alt="Scrimba logo"/>
-          <textarea 
-            placeholder="Tweet your reply" id="reply-input"></textarea>
-        </div>
-        <button id="reply-btn">Reply</button>`;
+      repliesHtml += ``;
       // show additional replies
       tweet.replies.forEach((reply) => {
         repliesHtml += `
@@ -243,7 +242,14 @@ function getFeedHtml() {
                 </div>   
             </div>            
         </div>
+        
         <div class="hidden" id="replies-${tweet.uuid}">
+          <div id="tweet-reply-area">
+            <img src="images/scrimbalogo.png" class="profile-pic" alt="Scrimba logo"/>
+            <textarea 
+              placeholder="Tweet your reply" id="reply-input"></textarea>
+            <button id="reply-btn" data-id="${tweet.uuid}">Reply</button>;
+          </div>
         ${repliesHtml}
         </div>
     </div>`;
