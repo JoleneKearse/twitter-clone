@@ -21,6 +21,8 @@ document.addEventListener("click", function (e) {
     handleLikedClick(e.target.dataset.tweet, e.target.dataset.liked);
   } else if (e.target.dataset.retweeted) {
     handleRetweetedClick(e.target.dataset.tweet, e.target.dataset.retweeted);
+  } else if (e.target.id === "reply-btn") {
+    handleReplyBtnClick();
   }
 });
 
@@ -108,15 +110,22 @@ function handleReplyClick(replyId) {
   document.getElementById(`replies-${replyId}`).classList.toggle("hidden");
 }
 
-function handleReplyBtnClick() {
+function handleReplyBtnClick(originalTweet, replyId) {
+  console.log(`reply btn clicked`);
   const replyInput = document.getElementById("reply-input");
+  const targetTweetObj = tweetsData.filter(
+    (tweet) => tweet.uuid === originalTweet
+  )[0];
+  // const targetReplyObj = targetTweetObj.replies.filter(
+  //   (reply) => reply.uuid === replyId
+  // )[0];
   if (replyInput.value) {
-    tweetsData.replies.unshift({
+    targetTweetObj.replies.unshift({
       handle: `@Scrimba`,
       profilePic: `./images/scrimbalogo.png`,
       likes: 0,
       retweets: 0,
-      tweetText: `${tweetInput.value}`,
+      tweetText: `${replyInput.value}`,
       replies: [],
       isLiked: false,
       isRetweeted: false,
@@ -169,9 +178,19 @@ function getFeedHtml() {
         retweetedClass = "retweeted";
       }
     });
+
     // check if tweet has replies
     let repliesHtml = "";
     if (tweet.replies.length > 0) {
+      // first give the ability for user to reply to tweets
+      repliesHtml += `
+        <div class="reply-input-area>
+          <img src="images/scrimbalogo.png" class="profile-pic" alt="Scrimba logo"/>
+          <textarea 
+            placeholder="Tweet your reply" id="reply-input"></textarea>
+        </div>
+        <button id="reply-btn">Reply</button>`;
+      // show additional replies
       tweet.replies.forEach((reply) => {
         repliesHtml += `
         <div class="tweet-reply">
