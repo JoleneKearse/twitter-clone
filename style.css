@@ -96,6 +96,11 @@ button {
   color: var(--clr-neutral-400);
 }
 
+.tweet-input-area,
+.tweet-reply-area {
+  color: var(--clr-neutral-800);
+}
+
 .liked{
   color: var(--clr-like);
 }
@@ -121,7 +126,8 @@ header{
   padding-bottom: 1em;
 }
 
-.tweet-input-area {
+.tweet-input-area,
+.tweet-reply-area {
   display: flex;
   align-items: flex-start;
   gap: 1em;
