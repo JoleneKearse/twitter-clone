@@ -1,5 +1,18 @@
 # Twimba - A Scimba-themed Twitter Clone
 
+<p>
+   <img src="https://img.shields.io/badge/HTML5-E34F26.svg?style=for-the-badge&logo=HTML5&logoColor=white" title="HTML5" alt="HTML5">
+   <img src="https://img.shields.io/badge/CSS3-1572B6.svg?style=for-the-badge&logo=CSS3&logoColor=white" title="CSS3" alt="CSS3">
+   <img src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=black" title="JavaScript" alt="JavaScript">
+   <img src="https://img.shields.io/badge/Font%20Awesome-528DD7.svg?style=for-the-badge&logo=Font-Awesome&logoColor=white" title="Font Awesome" alt="Font Awesome">
+</p>
+
+Visit the **[Live Site](https://twitter-clone-phi-pearl.vercel.app/)**!
+
+<div align="center"><img src="./screenshots/Twimba-screenrecording.gif" alt="Twitter clone"></div>
+
+This is the 3rd project in the **[Scrimba](https://scrimba.com/) Frontend Developer Career Path**'s **Module 5** on **Essential JavaScript**.
+
 ## Table of Contents
 
 - [Things This Project Taught](https://github.com/JoleneKearse/twitter-clone#things-this-project-taught)
@@ -15,12 +28,6 @@
 - [My Extras](https://github.com/JoleneKearse/twitter-clone#my-extras)
   - [Added Retweet to Feed](https://github.com/JoleneKearse/twitter-clone#added-retweet-to-feed)
   - [Light/Dark Mode Toggle](https://github.com/JoleneKearse/twitter-clone#lightdark-mode-toggle)
-
-[Live Site](https://twitter-clone-phi-pearl.vercel.app/)
-
-<div align="center"><img src="./screenshots/Twimba-screenrecording.gif" alt="Twitter clone"></div>
-
-This is the 3rd project in the **[Scrimba](https://scrimba.com/) Frontend Developer Career Path**'s **Module 5** on **Essential JavaScript**.
 
 ## Things this Project Taught
 
